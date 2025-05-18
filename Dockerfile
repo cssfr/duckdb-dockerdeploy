@@ -1,3 +1,3 @@
 # Dockerfile
-FROM datacatering/duckdb:latest
-ENTRYPOINT ["/duckdb", "-ui"]
+FROM datacatering/duckdb:v1.2.2
+ENTRYPOINT ["/duckdb","-ui"]
