@@ -19,10 +19,10 @@ RUN curl -L https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli
 RUN printf '#!/bin/sh\nexit 0\n' > /usr/local/bin/xdg-open \
     && chmod +x /usr/local/bin/xdg-open
 
-# Create data dir (not used for ephemeral)
+# Create data dir
 RUN mkdir -p /data
 
-# Copy config and entrypoint
+# Copy NGINX config + entrypoint
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
